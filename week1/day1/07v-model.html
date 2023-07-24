@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+ 
+  <div id="app">
+    <!-- 输入框 -->
+    <input type="text" v-model="inputTxt">
+    {{ inputTxt }}
+    <hr>
+    <!-- 单选框 -->
+    选择性别:
+    <label for="male">男</label>
+    <input type="radio"  id="male" value="男" v-model="gender">
+    <label for="female">女</label>
+    <input type="radio"  id="female" value="女" v-model="gender">
+    <br>
+    {{ gender }}
+    <hr>
+    <!-- 多选 -->
+    选择爱好:
+    <label for="lanqiu">篮球</label>
+    <input type="checkbox"  id="lanqiu" value="篮球" v-model="hobbies">
+    <label for="zuqiu">足球</label>
+    <input type="checkbox"  id="zuqiu" value="足球" v-model="hobbies">
+    <label for="piqiu">皮球</label>
+    <input type="checkbox"  id="piqiu" value="皮球" v-model="hobbies">
+    <br>
+    {{hobbies}}
+    <hr>
+    <!-- 复选框绑定checked属性 -->
+    <input type="checkbox" v-model="isChecked">
+    {{isChecked?'选中了':'取消选中了'}}
+
+    <hr>
+    <select v-model="city"  multiple>
+      <option value="蚌埠">蚌埠</option>
+      <option value="合肥">合肥</option>
+      <option value="芜湖">芜湖</option>
+    </select>
+    {{ city }}
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const str = '这是js的变量'
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          inputTxt: '初始值',
+          gender: '男',
+          hobbies: ['足球'],
+          isChecked: false,
+          city: ['芜湖']
+
+        }
+      }
+    });
+    app.mount('#app')
+    
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1,.box2,.box3{
+      padding: 50px;
+    }
+    .box1{
+      background-color: #ad4848;
+    }
+    .box2{
+      background-color: #3bd4da;
+    }
+    .box3{
+      background-color: #6e7cdb;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div id="app">
+      <div class="box1" @click="fn1">
+        <div class="box2" @click.capture="fn2">
+          <div class="box3" @click="fn3"></div>
+        </div>
+      </div>
+      <a @click.prevent href="http://www.baidu.com">点击</a>
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          
+        }
+      },
+      methods: {
+        fn3(){
+          console.log(3);
+        },
+        fn2(){
+          console.log(2);
+        },
+        fn1(){
+          console.log(1);
+        }
+      },
+    });
+    app.mount('#app')
+    
+    
+  </script>
+</body>
+</html>

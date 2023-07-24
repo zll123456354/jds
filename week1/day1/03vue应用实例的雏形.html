@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 视图上定义盒子 绑定 vue实例 -->
+  <div id="app">
+    <button @click="changeMsg">按钮</button>
+    {{msg}}
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    // 创建vue 应用程序实例  vue一切功能都是通过实例控制
+    // 实例传入配置对象 config对象
+    const config = {
+      // data 存储 实例上数据  （mvvm中 的 m）
+      data(){
+        return {
+          msg: '你好vue'
+        }
+      },
+      methods: {
+        // 存储实例的方法  直接挂载实例上
+        changeMsg(){
+          this.msg = '值改变了';
+        }
+      },
+    }
+    const app = createApp(config);
+    // 渲染到 视图上 控制 视图
+    app.mount('#app')
+    
+
+    
+  </script>
+</body>
+</html>

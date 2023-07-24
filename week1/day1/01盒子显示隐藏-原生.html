@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: #b1e45d;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <button>点击隐藏</button>
+  <div id="box"></div>
+  
+  <script>
+    var btn = document.querySelector('button');
+    var box = document.querySelector('#box');
+    btn.onclick = function(){
+      if (!this.onoff){
+        box.style.display = 'none';
+        this.innerHTML = '点击显示';
+        this.onoff = !this.onoff;
+      }else{
+        box.style.display = 'block';
+        this.innerHTML = '点击隐藏';
+        this.onoff = !this.onoff;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+ 
+  <div id="app">
+    <div v-bind:id="box">111</div>
+    <img :src="url" alt="">
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const str = '这是js的变量'
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          box: 'container',
+          url: 'https://img2.baidu.com/it/u=1693058886,815993951&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500'
+        }
+      }
+    });
+    app.mount('#app')
+    
+
+    
+  </script>
+</body>
+</html>

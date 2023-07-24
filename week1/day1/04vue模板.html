@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <div id="app">
+      {{ str }}
+      {{ msg }}
+      {{ '你好世界' }}
+
+      {{parseInt('1.23')}}
+
+      {{ isBeauty? '大美女': '好姑娘' }}
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const str = '这是js的变量'
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          msg: '你好vue',
+          isBeauty: true
+        }
+      }
+    });
+    app.mount('#app')
+    
+
+    
+  </script>
+</body>
+</html>

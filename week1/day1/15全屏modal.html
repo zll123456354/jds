@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #mask{
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.7);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #content{
+      width: 40%;
+      height: 40%;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div id="app">
+      <button @click="showModal">显示modal</button>
+      <div id="mask" @click.self="hideModal" v-show="modalShow">
+        <div id="content">
+          <input type="text">
+          <button>按钮</button>
+        </div>
+      </div>
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          modalShow: false
+        }
+      },
+      methods: {
+        showModal(){
+          this.modalShow = true;
+        },
+        hideModal(){
+          this.modalShow = false;
+        }
+      },
+    });
+    app.mount('#app')
+    
+    
+  </script>
+</body>
+</html>

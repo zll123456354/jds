@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+ 
+  <div id="app">
+    <label for="mv1">美女1</label>
+    <input type="radio"  id="mv1" value="https://img2.baidu.com/it/u=1693058886,815993951&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" v-model="url">
+    <label for="mv2">美女2</label>
+    <input type="radio"  id="mv2" value="https://img2.baidu.com/it/u=31714559,2974441821&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" v-model="url">
+    <label for="mv3">美女3</label>
+    <input type="radio"  id="mv3" value="https://img0.baidu.com/it/u=3396161029,4088901062&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" v-model="url">
+
+    <br>
+    <img :src="url" alt="" width="500">
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const str = '这是js的变量'
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          url: 'https://img2.baidu.com/it/u=1693058886,815993951&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500'
+        }
+      }
+    });
+    app.mount('#app')
+    
+
+    
+  </script>
+</body>
+</html>

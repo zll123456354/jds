@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+ 
+  <div id="app">
+    <!-- <button v-on:click="msg='值改变了'">按钮</button> -->
+    <button v-on:click="fn">按钮</button>
+    <button v-on:click="fn2('这是我传递的参数')">加括号绑定</button>
+    {{msg}}
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data(){
+        return {
+          msg: '这是vue'
+        }
+      },
+      methods: {
+        fn() {
+          this.msg = '值改变了'
+        },
+        fn2(msg) {
+          this.msg = msg;
+        }
+      },
+    });
+    app.mount('#app')
+    
+    
+  </script>
+</body>
+</html>
