@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: #bcc870;
+      margin: 20px auto;
+    }
+    #box2{
+      width: 200px;
+      height: 200px;
+      background-color: #4dd0af;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="isShow = !isShow">
+      {{isShow?'点击隐藏':'点击显示'}}
+    </button>
+    <div id="box" v-if="isShow">if</div>
+    <div id="box2" v-show="isShow">show</div>
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return {
+          isShow: true
+        }
+      },
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>

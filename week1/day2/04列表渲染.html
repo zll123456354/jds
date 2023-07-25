@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 声明循环值得变量 -->
+      <ul>
+        <li v-for="item in arr">
+          {{item}}
+        </li>
+      </ul>
+      <!-- 声明值 和 下标  变量 -->
+      <ul>
+        <li v-for="(item, index) in arr">
+          {{item}}
+          --->
+          {{index}}
+        </li>
+      </ul>
+
+      <!-- 循环对象 -->
+      <ul>
+        <li v-for="value in json">
+          {{value}}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(value, key, index) in json">
+          {{value}}
+            -->
+          {{key}}
+          -->
+          {{index}}
+        </li>
+      </ul>
+    </div>
+    <script src="./vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return {
+            arr: ["a", "b", "c", "d"],
+            json: {
+              name: '小明',
+              age: 18,
+              gender: '男'
+            }
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

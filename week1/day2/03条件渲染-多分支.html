@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: #bcc870;
+      margin: 20px auto;
+    }
+    #box2{
+      width: 200px;
+      height: 200px;
+      background-color: #4dd0af;
+      margin: 20px auto;
+    }
+    #box3{
+      width: 200px;
+      height: 200px;
+      background-color: #d6a53a;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="addNum">
+      {{activeIndex}}
+    </button>
+    <div id="box" v-if="activeIndex%3 === 0">11</div>
+   
+    <div id="box2" v-else-if="activeIndex%3 === 1">22</div>
+    
+    <div id="box3" v-else>33</div>
+  </div>
+  <script src="./vue.global.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return {
+          activeIndex: 0
+        }
+      },
+      methods: {
+        addNum() {
+          this.activeIndex++;
+        }
+      },
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>

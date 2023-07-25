@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div :class="a">11</div>
+      <div :class="[a, 'box2']">22</div>
+      <div :class="{a: 1===1, b: false, active:isActive}">33</div>
+      <div :class="[a, 'box2', {a: 1===1, b: false, active:isActive}]">44</div>
+    </div>
+    <script src="./vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return {
+            a: 'box',
+            isActive: true
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
